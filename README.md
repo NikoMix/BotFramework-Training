@@ -14,3 +14,10 @@ This training conists of several Steps to build a Chatbot with the Microsoft Bot
 
 * Visual Studio 2015 / 2017
 * Microsoft Azure Subscription
+* GitHub Account (Free)
+
+## Create GitHub Account
+
+## Create Microsoft Azure Subscription
+
+## Create Microsoft Developer Account
