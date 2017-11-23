@@ -9,11 +9,11 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/Home
 
 ## Create a new LUIS APP
 
-Please move on to the website below to start creating a LUIS App;
+Please move on to the website below to start creating a LUIS App. LUIS has a EU website for the European Region so please make sure that you are on the **eu** page and not the **www** page.
 
-https://www.luis.ai/home
+https://eu.luis.ai/home
 
-From the main page click the "Sign In" button on the right top of the page. You can use your Avanade credentials to sign in to the LUIS app. After you login you will be forwarded to the **My Apps** page. If not please selecet the **My Apss** from the top menu. Now we will be creating a new app so please click **New App**
+From the main page click the "Sign In" button on the right top of the page. You can use your Avanade credentials to sign in to the LUIS app. After you login you will be forwarded to the **My Apps** page. If not please selecet the **My Apps** from the top menu. Now we will be creating a new app so please click **New App**
 
 ![Create New LUIS App](https://jrbvbq.by3302.livefilestore.com/y4m9tVOQDoeHsI4Pc_K5wP99l32wooHTzLHDZi52z-52moRn1xfbaAAHjQt7g1beZB3ieB50Tm1Wv_mFBCz5SAZtkyv8ID6QSBAtz9KJ1MrCKfHwgf8hAus1xhRiSEDdcl07kEDQg4FGNMTlpb0zAL9CLj8FogIqjw8qZA5gLytDc1AWnkVFpvGt0xndIDSqFn1Ze9zj7YC9yK24610nwSN-w?width=468&height=198&cropmode=none)
 
@@ -28,11 +28,17 @@ In the Image below you can find the Menu that should be visible on the left side
 ![LUIS Left Menu](https://8mygwa.by3302.livefilestore.com/y4mYIrgwfF8c-Nv-Wk7HGQ4rCPUBVy1SRixEs0GZvE3YLMY2fAM0W4LF-VbixxFHcw2xONc3FlWDShWJTAGDmwrd5xeEgk0zRjC_ZwQ8AoQifQos3oTJbj_CYLeVqjBQOgtibhyPbz6dlSD17NUUi8CYM_AndZoCgpDT6ATXWy0XqXLhokl0uzpuKs7qdEIJGtWi8P2zcMdhYvN3DlyjLuMdA?width=515&height=1137&cropmode=none)
 
 **Dashboard** -> Facts & statistics about the app's data and the received endpoint hits at any period of time.
-**Intents** -> A listing of intents in the application. 
+
+**Intents** -> A listing of intents in the application.
+
 **Entities** -> Manage a list of entities in your application and track and control their instances within utterances.
+
 **Prebuilt domains** -> Prebuilt domains are off-the-shelf collections of intents and entities that you can directly add and use in your application.
+
 **Features** -> Use these advanced features to improve performance and avoid mistakes in identifying and interpreting utterances.
+
 **Train & Test** -> Use this tool to test the current and published versions of your application, to check if you are progressing on the right track.
+
 **Publish App** -> Use this section to Publish your LUIS app.
 
 
