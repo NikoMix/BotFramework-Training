@@ -33,7 +33,7 @@ Make sure that **Knowledge Base** is selected from the side menu as shown above.
 
 ![Add Question and Answer](https://yuagea.by3302.livefilestore.com/y4mmwHVrfYcGMpRCJQOHTU5QWF1a1drLTO_NZbeKMWoBBQFtDQBiRmhdoN3FvN2WSV_1FhfsAkxkcMOW5OknNvnv0MaMKwiDgtbLm_ASAv10HF1zlrAF5LY6ZJmlDTxhbnioBhHptas_zcVH-6NHfT0ta0rsshUJd02BKx1gnU87NknhYv3TYsk7RO9qqeLxSXC3NTrybJMJeOyGh28TEykRg?width=1232&height=398&cropmode=none)
 
-If you made a mistak don't worry because you always have the chance to delete your Question and Answer. You can do this my clicking the **Delete QnA pair** button that opens a drop-down when you click the three dots on the corner of the Question or Answer box. Please check the image below to see the drop-down.
+If you made a mistake don't worry because you always have the chance to delete your Question and Answer. You can do this my clicking the **Delete QnA pair** button that opens a drop-down when you click the three dots on the corner of the Question or Answer box. Please check the image below to see the drop-down.
 
 If you are satisfied with your answer and you want your client to reach this answer by asking anohter question, you might aswell use the **Add alternative phrasing** button which is visible in the drop-down that opens when you click the three dots on the corner of the Question box. This will create a new line with the same Answer box but an empty Question box. Please check the image below to see the drop-down.
 

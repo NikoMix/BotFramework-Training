@@ -41,11 +41,6 @@ In the Image below you can find the Menu that should be visible on the left side
 
 **Publish App** -> Use this section to Publish your LUIS app.
 
-
-## Create Azure Service
-
-## Add Key 
-
 ## Add Intents
 
 Lets go to our LUIS App page and select **Intents** from the left menu. An Intent represents actions that the user wants to perform. Our aim is to add two Intents to our App (*Giving Feedback* and *Providing Idea*).
@@ -69,13 +64,14 @@ Lets go to our LUIS App page and select **Entities** from the left menu. In the 
 
 
 ## Add Utterances
+
 Lets go to our LUIS App page and select **Intents** from the left menu. Now click the intent that you previously created so that we can add utterances to it.
 
 In the box that says *Type a new utterance & press Enter*, we can enter a new utterance. 
 
 For example lets enter *I have an idea* and then press enter. Now you will see that this utterance has been added to the list.
 
-For example lets enter *why dont we have more holiday* and then press enter. You will also see this in the list below. As you can see the part after *why dont* is an idea. So we can basically assign the words that come after the *why dont* to the **Idea** entity. We do this by clicking the first and last letter of the part of the sentect that we want to connect to the Entity. Once you have this part in the brackets there will be a hover menu asking you which Entity you want to select. From this hover menu lets select the **Idea** entity.
+For example lets enter *why dont we have more holiday* and then press enter. You will also see this in the list below. As you can see the part after *why dont* is an idea. So we can basically assign the words that come after the *why dont* to the **Idea** entity. We do this by clicking the first and last letter of the part of the sentence that we want to connect to the Entity. Once you have this part in the brackets there will be a hover menu asking you which Entity you want to select. From this hover menu lets select the **Idea** entity.
 
 Dont forget to click the **Save** button after creating the utterances.
 
@@ -83,4 +79,98 @@ Dont forget to click the **Save** button after creating the utterances.
 
 ## Train & Test
 
+Once we have our Intents, Entities and Utterances it means that we are ready to **Train & Test** our LUIS App. We start this step by clicking the **Train & Test** header on the left. You should have a similar page to the image below. Now you can click **Train** or **Train Application** button.
+
+ ![Train Luis App Main screen](https://ijvlyg.by3302.livefilestore.com/y4mJUieTXh154JDbCGJH4tQnBuWowX7YwNlb6NWCE09YmtSyuoNHvH1_BUPrnekz5o-jZsf9SVH9Y8luyPNT1GUfSWHeUbaeeW7Br-_RI56smmUXWjfCpOCwmxJgrW0Erwg2LAVTad3GACN7Wx58fTS0uNzuo6Q50zqypP-Y8KWLPpvpIP6TzLF6oYkBLemP7OCnOS55cLTxoU2yui7NH9KJA?width=1211&height=502&cropmode=none)
+
+Whenever you make updates in your current model, you’ll need to train your app before testing and publishing it. When you 'train' a model, LUIS generalizes from the examples you have labeled, and develops code to recognize relevant intents and entities in the future, thus improving its classification accuracy.
+
+On the current page you are able to write sentences and send them to see if LUIS understands what you are talking about and also if it can capture your Entities. 
+
+Before you start testing, click **Train Application** to train the current model on the latest updates. Note that you'll not be able to train your app until you add utterances for all your intents.
+
+In the scenario below LUIS understood that both sentences are about the **GiveIdea** Intent. The problem is that LUIS caught the *$Idea* in one sentence but it couldnt catch it on the second sentence. So this means I have to go back to the **Utterances** page to improve my logic.
+
+
+ ![Train Luis App training screen](https://78yjwa.by3302.livefilestore.com/y4mOqqlzVil40NLYagA7gK_62OI1IFPjgv5gF1dolscQPs7dIB8pMJO3dMuEXkCB1EZSxX1RP-rE2YlnAW6dNBX_-04a1LAu5-rfDCl12CEguOIZW2pHORcn7C7Ll0xomFqHAQfRIsKpifVgZw_XyAd48APTCBMELVA53Zer-j63nP-gWMtgYiT3tg0rmXdWtYLfS41bNdMsBw41Vws-0Yq7Q?width=1210&height=640&cropmode=none)
+
+## Create Azure Service
+
+Now let's login to Microsoft Azure with our Avanade credentials.
+
+https://portal.azure.com
+
+Please open the **Resource Group** that we created in the previous steps. Click the **+Add** button so that we can add a new service to our **Resource Group**. You can find this button in the image below.
+
+ ![Click the Add Service button](https://x2tg1q.by3302.livefilestore.com/y4m9V_rC2tH8sxzBtktt_0dEKFauavPLTN65IJBBXuWuiBnayeaPSvddk21zRe8rEQsjyKamcMxycbyP0abpRUml3f5C2gDP0KjqHuhs9kLIyk9zKnuNNXx16SZKvOBEWrHGwPe1NEB2nh2toKTNHbjzuvfeIfM8IfHnKth2O-CyT5jlQDOzMD1UZtQaw07Kbhyh53Kt1N5gPnebqkmAAz5YA?width=761&height=217&cropmode=none)
+
+ In the search bar lets type in **LUIS** so that we can find the **LUIS** service. When you find the correct service as shown in the image below, click on it so that you have new blade with the description of the **LUIS** service. Let's click the **Create** button on the bottom of the new blade so that we can set up our new **LUIS** service. 
+
+ ![Type LUIS to search bar](https://lpe4mg.by3302.livefilestore.com/y4mAnvba5RY3ftwEl9uSmX3JgDIn_aevio-UxIE3660qfWjFkdW2z-uz7MUT4IQFUiI2-IblCnBzXFRiFEU4zYIqr32s2IultPV58jpEePbPbOi7MEzuOJlwW30NxW4B3GSe4x67-k0Uwy1m_iNwwAAD2fp5b95cV5vPmxSVxy0ivhNYugcNcya4ZcsuHP0Pdp6wjfhJizkrmtJZaWPFCbFQQ?width=775&height=297&cropmode=none)
+
+In the new blade you will see empty fields similar to the image below.
+
+**Name:** Enter a unique name for your LUIS Service.
+
+**Subscription:** Select the correct subscription.
+
+**Location:** Select West Europe. This is the closest service location to our current location.
+
+**Pricing tier:** Select the F0 option. This is the free version and it is more then enough for our current event.
+
+**Resource group:** Select the *Use existing* box and select the correct Resource Group from the drop-down.
+
+Lastly, click the confirmation button and then click **Create** so that we can create our new LUIS Service.
+
+  ![New LUIS Service details](https://kyirka.by3302.livefilestore.com/y4mqiBQBnaR5aKGAl_UO5z3hDotQPAlertbS4eJa25vXoBZVF7GZd_TAdv_QuIKlPJQLwox6gLfRyL5LzrzC9yKLzFFUmsp_eQhS_UaG6_3TZ0PDcD1jWq5Gn4HPZTz0DpKo0pzOL8HMxnOJL2GK8hpGdb8YAiBV1gTVQh7JAuGo_ITYwbCSy5ymmoz56_rdVhmlQzrosFRy82-crlWWOIjHQ?width=288&height=561&cropmode=none)
+
+
 ## Bind Azure Key to LUIS AI Model
+
+Now its time to bind our Azure Service to our LUIS App. 
+
+Select **Publish App** from the main left menu of your LUIS App. You should have screen similar to the image below.
+
+Now please select the **Europe Regions** and then click the **Add Key** button.
+
+  ![Select Europe and click Add Key](https://9g1q7q.by3302.livefilestore.com/y4mQc9O_dp4DiGRMT4uxVYqpr8IkmMeLlRDRlwpUGDo5Km5AVC7Sercr29KPFXbdxhsY8YHgw40qsxxqfQ5XGLhO3XGOL45HdDv5mR5wd78chwY1sjQG8EOeCpLAo9qUbcluhbfIlbUFKDsBIIcCE6wz_o6pCTFcqzAkSRjocPR7k1_CnGAFpB8n947i18bMd-fqE5KULwySZQvRl2uzNyDXg?width=932&height=550&cropmode=none)
+
+From the screen that pops up you will see a similar screen to the image below. You need to enter a Tenant name, Subscription Name and a Key. Things might get tricky here so continue reading the next part.
+
+ ![Assign a key to your app](https://w5ncsg.by3302.livefilestore.com/y4mEWHDi4_8ftzgCCSYQpavqNiZbt8ANBytrL0yNHQ7mcMygN5YU4uQoDeXT2pbRXIRFPrxAyFGyvmMqxsqg6XoUbOVtqtCkCf1zhZNr2KbIemCh0a0AZ2WNmx4Tv81kd8BSMiW_9dQWv_fzbfEdvN6ZjXqWqFIAaipq9w8z3Q-EbbE9tLRL2eruSzZACnrlab51UnZ8knx1a7YGMPBVHx63w?width=607&height=431&cropmode=none)
+
+###### Tenant name
+
+You might have several Tenant names in the drop-down or maybe only even one. Let's check if what our correct Tenant name is.
+
+We go to Microsoft Azure. On the right top of the page you will see your email address and your current Directory. Make sure you are on the correct Directory. Now mouse over your email and you will see a hover screen similar to the image below. 
+
+Your Tenant name is the string next to your Directory name.
+
+ ![Tenant Name](https://wcqbqa.by3302.livefilestore.com/y4mZm-pl7kCSTDk4P9ApDSdYrLJkqvexl_pWR8kaWTDLx-eRLu_7gS7lArNrSrmlJ0WrEUiV9o8YxI0EZzj6QRXgRXGh9yvAHZhJ8S49KiWUQfjIiEff-VRqOUcnOO63oj5ZuQu7WE3T06LCf-nO8eKH2LVz-HW3MdNSnqNHF-uvWfptxMtQjBpgrfbJN_t4zIKRyQjAFPnSBgWkEUmZkg7Gw?width=1071&height=283&cropmode=none)
+
+###### Subscription Name
+
+Make sure you select the correct Subscription name.
+
+###### Key
+
+The Key in the drop-down should be the same name as your LUIS Service which you created on Microsoft Azure. 
+
+If we are all set you can click the **Add Key** button.
+
+Once the steps above are completed you should see your new key is added on the **Publish App** page. Your screen should look similar to the one image below.
+
+ ![New Key Added](https://jbbzbq.by3302.livefilestore.com/y4mtcro2KmONlLxyJzHOP8fw7sUxqfKl7vQwHFoEwm7f1e_oOZQpCHUfgZqh9onvPNgs6C5GiLiCle_shsKECo7oVNTr43H07kvuzP0oRuQ8q4vM9MyuPtX7LYndfseFgeNNzDAv0_ZdTLWwGaD-XTOsSydGWI0AyOnOW-2nfsUHUXMA-Wc_DIE2XOgYw-e6ks2AUUMkbycxiJNwHluXDMwFw?width=1353&height=262&cropmode=none)
+
+## Publish your LUIS App
+
+Select **Publish App** from the main left menu of your LUIS App. Make sure you added the new Key as explained in the previous section. You should have screen similar to the image below.
+
+  ![Click Publish to production slot](https://9g1q7q.by3302.livefilestore.com/y4mQc9O_dp4DiGRMT4uxVYqpr8IkmMeLlRDRlwpUGDo5Km5AVC7Sercr29KPFXbdxhsY8YHgw40qsxxqfQ5XGLhO3XGOL45HdDv5mR5wd78chwY1sjQG8EOeCpLAo9qUbcluhbfIlbUFKDsBIIcCE6wz_o6pCTFcqzAkSRjocPR7k1_CnGAFpB8n947i18bMd-fqE5KULwySZQvRl2uzNyDXg?width=932&height=550&cropmode=none)
+
+Now please click the **Publish to production slot**. If the publish is successful you should see a similer view to the image below on the top of your screen.
+
+  ![Publish Information](https://ijvmyg.by3302.livefilestore.com/y4mjfqhoEjZqf19zgR7dFbSTVCNRU8qpCg4SsLjrU2Cvt-M5O0-h8QuS0v-y746ocYgSjIX4NqmOJT3lkk0OLYFQYfnvSL5aXEu6BqIAOxESO-aQvdFeiCPKKalWrO9j7KQ9i7vM8zpSfUlPJhZi9wdkBkO5YyiqMnXdaK_WMrf7G1vn1OMkPyz6qsagdsxTXnqYoLqZ9oLnTWBu1c_JRdNXQ?width=431&height=115&cropmode=none)
+
+  ## Add Keys to VS
