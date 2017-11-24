@@ -64,3 +64,12 @@ After clicking the **Publish** button from the main page you will be forwarded t
 Congratulations! If you see a similar screen to the image below this means that you have your QnA Service up and running. There two important keys we have to note down on this page which will help us communicate with our VS project. The first key is the string between **POST/knowledgebases/** and **/generateAnswer**. The second key is the **Ocp-Apim-Subscription-Key**
 
 ![QnA Service Keys](https://wcqaqa.by3302.livefilestore.com/y4mpeG2ffAcnuEaBGhFBjlh-2M7bjS_By_zWHvKbAvO6U3DOmHfsr1fP7BbLKgN2LREcQD8-dZhphmEjNsaFywy1cBzXjRnWDcADlkmfpmHHneo1oTE-IA6Olgf0olJ9lUOC1_uCJvMPjNxdtALLb4xquagf21tpPmqv9hwsVbV8R935pZkT5CD2SrVxhYN96yBrCzxwJnh64AllcRw2v90Kg?width=761&height=386&cropmode=none)
+
+
+ ## Add Keys to VS
+
+ Now it's time to add our keys to our VS project. You should have the two keys mentioned in the section above. The first key is the string between **POST/knowledgebases/** and **/generateAnswer**. The second key is the **Ocp-Apim-Subscription-Key**
+
+You should add these numbers to your VS project similarly to the image below. The first string is **Ocp-Apim-Subscription-Key** and the second string is the string between **POST/knowledgebases/** and **/generateAnswer**.
+
+   ![Add the Keys to VS](https://78ykwa.by3302.livefilestore.com/y4mpz8aIKOTVKk5XApX2jlJVlJIeF00KmF3e8g1o1vsGUq81wHyZdOEORs1X03DJ4qAetUwjVZpxaELZ_0x--TykdvjUxhr7WNuCri0Cv5oVgJPrrjrvHS8_Col_nWJF2vjTrS5Tii9cHjdO-tvKMz3sqkkw5SimHBUNpN2Isd-WuY5MKYspqE75dMZozDj7flTqInLKyqel0EriuJjPvV_9w?width=666&height=75&cropmode=none)

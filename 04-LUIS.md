@@ -7,6 +7,7 @@ The documentation explains LUIS with these words: Language Understanding Intelli
 Please find the Documentation to LUIS in the link below;
 https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/Home
 
+
 ## Create a new LUIS APP
 
 Please move on to the website below to start creating a LUIS App. LUIS has a EU website for the European Region so please make sure that you are on the **eu** page and not the **www** page.
@@ -20,6 +21,7 @@ From the main page click the "Sign In" button on the right top of the page. You 
 In the page that pops up enter the Name, Culture and Description(optional) details for your new LUIS app. Lastly click the **Create** button.
 
 ![Tap Create Button](https://izviyg.by3302.livefilestore.com/y4mtZu56sV8WJfyuGgSSlzecDNNsef9x3WjATSx_dhRThxdWCfANyv1mW6TScoPmFbEQpfTjAApUHcRCIED19fIXbrNZi_PW_IuouRkGqycGIPFq6Bvx8wh8fwmmM_cgo1jVPEYYoXUc7zz26rT4m8ymt72x5m9autVED-9HP91LrEawRVegeOMg0a2h8OEfXXEKhV0OKB_mPQN1zE_t1T_FA?width=600&height=414&cropmode=none)
+
 
 ## Get to know your LUIS APP
 
@@ -40,6 +42,7 @@ In the Image below you can find the Menu that should be visible on the left side
 **Train & Test** -> Use this tool to test the current and published versions of your application, to check if you are progressing on the right track.
 
 **Publish App** -> Use this section to Publish your LUIS app.
+
 
 ## Add Intents
 
@@ -77,6 +80,7 @@ Dont forget to click the **Save** button after creating the utterances.
 
  ![Add Utterances](https://ypdqdw.by3302.livefilestore.com/y4m2Y8E-SebezzcGNT19LlUaso38mpVguSVkzsw0Uda-iMoV2uxiD5fdtQ5kqLBCJNQNF_KP_pRupglhxCgpBww11mvOIpXY0ui8DsykL80TjvueZPAevmEa0yV6EYU8f6HnOVT-hOzDRwJtHxteMiKvWWvEAGHqXFE4WHMm2KKGP5slvedtc9zkOjaDXBtssmURpfuvey67qPS1C2FB1-1nQ?width=1808&height=1168&cropmode=none)
 
+
 ## Train & Test
 
 Once we have our Intents, Entities and Utterances it means that we are ready to **Train & Test** our LUIS App. We start this step by clicking the **Train & Test** header on the left. You should have a similar page to the image below. Now you can click **Train** or **Train Application** button.
@@ -93,6 +97,7 @@ In the scenario below LUIS understood that both sentences are about the **GiveId
 
 
  ![Train Luis App training screen](https://78yjwa.by3302.livefilestore.com/y4mOqqlzVil40NLYagA7gK_62OI1IFPjgv5gF1dolscQPs7dIB8pMJO3dMuEXkCB1EZSxX1RP-rE2YlnAW6dNBX_-04a1LAu5-rfDCl12CEguOIZW2pHORcn7C7Ll0xomFqHAQfRIsKpifVgZw_XyAd48APTCBMELVA53Zer-j63nP-gWMtgYiT3tg0rmXdWtYLfS41bNdMsBw41Vws-0Yq7Q?width=1210&height=640&cropmode=none)
+
 
 ## Create Azure Service
 
@@ -163,6 +168,7 @@ Once the steps above are completed you should see your new key is added on the *
 
  ![New Key Added](https://jbbzbq.by3302.livefilestore.com/y4mtcro2KmONlLxyJzHOP8fw7sUxqfKl7vQwHFoEwm7f1e_oOZQpCHUfgZqh9onvPNgs6C5GiLiCle_shsKECo7oVNTr43H07kvuzP0oRuQ8q4vM9MyuPtX7LYndfseFgeNNzDAv0_ZdTLWwGaD-XTOsSydGWI0AyOnOW-2nfsUHUXMA-Wc_DIE2XOgYw-e6ks2AUUMkbycxiJNwHluXDMwFw?width=1353&height=262&cropmode=none)
 
+
 ## Publish your LUIS App
 
 Select **Publish App** from the main left menu of your LUIS App. Make sure you added the new Key as explained in the previous section. You should have screen similar to the image below.
@@ -173,4 +179,15 @@ Now please click the **Publish to production slot**. If the publish is successfu
 
   ![Publish Information](https://ijvmyg.by3302.livefilestore.com/y4mjfqhoEjZqf19zgR7dFbSTVCNRU8qpCg4SsLjrU2Cvt-M5O0-h8QuS0v-y746ocYgSjIX4NqmOJT3lkk0OLYFQYfnvSL5aXEu6BqIAOxESO-aQvdFeiCPKKalWrO9j7KQ9i7vM8zpSfUlPJhZi9wdkBkO5YyiqMnXdaK_WMrf7G1vn1OMkPyz6qsagdsxTXnqYoLqZ9oLnTWBu1c_JRdNXQ?width=431&height=115&cropmode=none)
 
+
   ## Add Keys to VS
+
+Now it's time to add our keys to our VS project. You should find two keys: **App ID** and **Key 1**
+
+To find your **App ID** open your LUIS service on the the Dashboard page you should find your **App ID** string.
+
+To find your **Key 1** open your Microsoft Azure LUIS Service and click the **Keys** header from the side bar. In the page that opens you should find **Key 1**.
+
+You should add these numbers to your VS project similarly to the image below. The first string is **App ID** and the second string is **Key 1**.  
+
+   ![Add the Keys to VS](https://yuaeea.by3302.livefilestore.com/y4mFj5buNWaak_t3J-T1efJPTyz7fqPifJ0JdJdMjybWvt1BVD1LNO6K7VyqChk2YzRmKrw-WPCBRDgj2n-HOKWUx_IvOR_icKspQfDHKaXkgA6ymAMhdghJNFcblbvdTdIbNx41CzEJXmxK9MFX6loAjKnmKC46ucrKpnW-te9NFshyr-AJC9p-k5Hd5hHv2ZLR6NS5wrXw3pen81iJB5y9Q?width=1133&height=75&cropmode=none)
