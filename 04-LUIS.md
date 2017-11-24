@@ -1,4 +1,4 @@
-# LUIS (Language Understanding Intellignet Service)
+# LUIS (Language Understanding Intelligent Service)
 
 In this section we will have some hands on experience with LUIS. 
 
