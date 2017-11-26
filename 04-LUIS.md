@@ -76,7 +76,7 @@ For example lets enter *I have an idea* and then press enter. Now you will see t
 
 For example lets enter *why dont we have more holiday* and then press enter. You will also see this in the list below. As you can see the part after *why dont* is an idea. So we can basically assign the words that come after the *why dont* to the **Idea** entity. We do this by clicking the first and last letter of the part of the sentence that we want to connect to the Entity. Once you have this part in the brackets there will be a hover menu asking you which Entity you want to select. From this hover menu lets select the **Idea** entity.
 
-Dont forget to click the **Save** button after creating the utterances.
+Don't forget to click the **Save** button after creating the utterances.
 
  ![Add Utterances](https://ypdqdw.by3302.livefilestore.com/y4m2Y8E-SebezzcGNT19LlUaso38mpVguSVkzsw0Uda-iMoV2uxiD5fdtQ5kqLBCJNQNF_KP_pRupglhxCgpBww11mvOIpXY0ui8DsykL80TjvueZPAevmEa0yV6EYU8f6HnOVT-hOzDRwJtHxteMiKvWWvEAGHqXFE4WHMm2KKGP5slvedtc9zkOjaDXBtssmURpfuvey67qPS1C2FB1-1nQ?width=1808&height=1168&cropmode=none)
 
@@ -180,14 +180,30 @@ Now please click the **Publish to production slot**. If the publish is successfu
   ![Publish Information](https://ijvmyg.by3302.livefilestore.com/y4mjfqhoEjZqf19zgR7dFbSTVCNRU8qpCg4SsLjrU2Cvt-M5O0-h8QuS0v-y746ocYgSjIX4NqmOJT3lkk0OLYFQYfnvSL5aXEu6BqIAOxESO-aQvdFeiCPKKalWrO9j7KQ9i7vM8zpSfUlPJhZi9wdkBkO5YyiqMnXdaK_WMrf7G1vn1OMkPyz6qsagdsxTXnqYoLqZ9oLnTWBu1c_JRdNXQ?width=431&height=115&cropmode=none)
 
 
-  ## Add Keys to VS
+  ## Add Keys to Microsoft Azure Web App
 
-Now it's time to add our keys to our VS project. You should find two keys: **App ID** and **Key 1**
+Now it's time to add our keys to our Microsoft Azure Web App. We always have the chance to save the keys to VS but for security reasons its always better to save the keys to the Microsoft Azure Web App and then give a reference to the Microsoft Azure Web App from VS. You should find two keys: **App ID** and **Key 1**
 
 To find your **App ID** open your LUIS service on the the Dashboard page you should find your **App ID** string.
 
 To find your **Key 1** open your Microsoft Azure LUIS Service and click the **Keys** header from the side bar. In the page that opens you should find **Key 1**.
 
-You should add these numbers to your VS project similarly to the image below. The first string is **App ID** and the second string is **Key 1**.  
+You should add these numbers to your Microsoft Azure Web App. Open the Microsoft Azure Web App you created in the previous steps. In the left menu bar find **Application Settings** under the **Settings** part. The left menu should be similar to the image below.
 
-   ![Add the Keys to VS](https://yuaeea.by3302.livefilestore.com/y4mFj5buNWaak_t3J-T1efJPTyz7fqPifJ0JdJdMjybWvt1BVD1LNO6K7VyqChk2YzRmKrw-WPCBRDgj2n-HOKWUx_IvOR_icKspQfDHKaXkgA6ymAMhdghJNFcblbvdTdIbNx41CzEJXmxK9MFX6loAjKnmKC46ucrKpnW-te9NFshyr-AJC9p-k5Hd5hHv2ZLR6NS5wrXw3pen81iJB5y9Q?width=1133&height=75&cropmode=none)
+   ![Web App Application Settings](https://w5mqsg.by3302.livefilestore.com/y4m5NbT5UBfeDVbsJwQ6P5zwq6jGuBmZz2rDnKjgAyTmj0ZoxX045SKrPtwA1M9C_rZmjXf4fqILiWOJQvgj-3VZ96Fb1bLpcw6W0CANfOEPrsz8waeCQo6pQ5DH1A1dkunrpPCinQul9EEaVHToyUal-CtNOxroi2Uy230qO8oaeyRewqJbu2MziyKMdP2gUIj3nw5aRHz57j_mtv38BHZCQ?width=193&height=266&cropmode=none)
+
+Now we will add the two keys to the **App settings** section. In the **App settings** section each line is formed of **Key** and **Value**. 
+
+The **Key** is kind of like a mask to the string you will save. So you will use this **Key** in VS. By this way if someone gets their hands on your script they will not be able to reach your keys.
+
+The **Value** is the real key value that you will be masking.
+
+Please check the image below. You should add your **App ID** and **Key 1** strings to the **App settings** section.
+
+Don't forget to click the **Save** button to save your changes.
+
+  ![Add Keys to Application Settings](https://wcqyqa.by3302.livefilestore.com/y4mIZBEFB4fEjuJ933k1ZU6fnvkR5-QlS1F6n2LeJwkcQa-WjK7xICZbIxSbk0G4_88oQ_U469vAPANdYjyjfAIWkhCJk-LCRC0nWHitX6SCO7EKrGCYFL2-tomKuZlSUQfPfkz4fZ4UVKnyGXaiLmAMiAh4Az-SkPT_QYCEFAicvjrNWkpnLmKimYJ2LhIrsgUDk0P1dt1crVmgBpBM-DQEw?width=1032&height=151&cropmode=none)
+
+Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
+
+ ![LUIS Key reference](https://jbbwbq.by3302.livefilestore.com/y4mm_TaqolAOGPIwSRLCiYFBiEK72t4C0nUHlbcRP8Pf_tGHd1UM33JBfT6XngZrDXxXwl8zL65c7bTLhEt-OioLkmKyw201Jb0-Hsmt8O1TIwQ6hzlOH-PLl7tHGZg-fSaYDm2a_0NJbwAv9m7cuT_8XqJjRfxHH3xdarrN9hIuCquttrylsJrpqepNpyGRhZFpjcS0-IWkf5DsBG45nnn7g?width=1110&height=92&cropmode=none)
