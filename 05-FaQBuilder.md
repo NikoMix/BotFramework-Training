@@ -83,10 +83,10 @@ The **Value** is the real key value that you will be masking.
 
 Please check the image below. You should add your keys to the **App settings** section.
 
-Don't forget to click the **Save** button two save your changes.
+Don't forget to click the **Save** button to save your changes.
 
   ![Add QnA Maker Keys to Application Settings](https://78yhwa.by3302.livefilestore.com/y4mybv48TGGm4acAfdekN7SON6ZNRgdcW_AqRQyFYhxr9KrjA0M6AwG6iJkywf-et5DxkcKtnjjMDyyJeJi6yKOvT92X-jpgjksZT1eVFhKAKMjWCsBfyJ7x-Xytj2ZqTUKMsn9Pwg5WcR5_E88MHwA4_AL0gMtfbTfyDsNry50KQ8anMggsUvT93bx5gdrojUiHsAKypYtAJv6tr1px3Rb5g?width=1016&height=213&cropmode=none)
 
-Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS Make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
+Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
 
  ![QnA Maker Key reference](https://ijvjyg.by3302.livefilestore.com/y4mF6d5M7nRjdg-u2togw5-140Xxj4nNGrGY85l5_3UQVfDa-dIiKE0wmEECcOUlL5WMR6Nr5vysDaiWqgtK6QHaNZ73WdvJ51k6O69NR_wutCuQMEF5LtUegfilms8ywhsMxhfnOpEM8LAs-ctuqvGlbaaq5AHWx01qUx0WqN2Q5Mi9GqM7WrczqQYVmDya4ALETq4dYBgFddX3HtlZOtdJA?width=354&height=80&cropmode=none)

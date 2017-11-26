@@ -200,10 +200,10 @@ The **Value** is the real key value that you will be masking.
 
 Please check the image below. You should add your **App ID** and **Key 1** strings to the **App settings** section.
 
-Don't forget to click the **Save** button two save your changes.
+Don't forget to click the **Save** button to save your changes.
 
   ![Add Keys to Application Settings](https://wcqyqa.by3302.livefilestore.com/y4mIZBEFB4fEjuJ933k1ZU6fnvkR5-QlS1F6n2LeJwkcQa-WjK7xICZbIxSbk0G4_88oQ_U469vAPANdYjyjfAIWkhCJk-LCRC0nWHitX6SCO7EKrGCYFL2-tomKuZlSUQfPfkz4fZ4UVKnyGXaiLmAMiAh4Az-SkPT_QYCEFAicvjrNWkpnLmKimYJ2LhIrsgUDk0P1dt1crVmgBpBM-DQEw?width=1032&height=151&cropmode=none)
 
-Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS Make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
+Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
 
  ![LUIS Key reference](https://jbbwbq.by3302.livefilestore.com/y4mm_TaqolAOGPIwSRLCiYFBiEK72t4C0nUHlbcRP8Pf_tGHd1UM33JBfT6XngZrDXxXwl8zL65c7bTLhEt-OioLkmKyw201Jb0-Hsmt8O1TIwQ6hzlOH-PLl7tHGZg-fSaYDm2a_0NJbwAv9m7cuT_8XqJjRfxHH3xdarrN9hIuCquttrylsJrpqepNpyGRhZFpjcS0-IWkf5DsBG45nnn7g?width=1110&height=92&cropmode=none)
