@@ -1,12 +1,11 @@
 # Microsoft QnA Maker
 
-In this section we will have some hands on experience with the QnA Maker. 
+In this section we will have some hands on experience with the QnA Maker.
 
 The documentation explains QnA Maker with these words: "Microsoft QnA Maker is a free, easy-to-use, REST API and web-based service that trains AI to respond to user's questions in a more natural, conversational way. Compatible across development platforms, hosting services, and channels, QnA Maker is the only question and answer service with a graphical user interface—meaning you don’t need to be a developer to train, manage, and use it for a wide range of solutions."
 
-Please find the Documentation to QnA Maker in the link below;
+Please find the Documentation to QnA Maker in the link below:
 https://qnamaker.ai/Documentation
-
 
 ## Create a new QnA Service
 
@@ -21,7 +20,6 @@ From the main page click the "Sign In" button on the right top of the page. You 
 In the page that opens enter a **Service Name** for your QnA Service and then click the **Create** button.
 
 ![Tap Create Button](https://izveyg.by3302.livefilestore.com/y4mWxKN_wpI_BmmRa7FzREORE_VsQegSOXn17RmZU01tt1wZ2Vb6PilmcTUJ-hH8G9ksYJ7_SEaCOKjN6Z9CpopO06xvxpHVyYipSv-bCQpeXIKUnsqBbcAMpFopzurgJOTY1KhnWhmXtLvUIOojRrspKUIHA-3s81CT_jvz_Cdpj2B1r4Tus1FCszZyShLKPQWX_S3u17U-Dgmfd1O6b1--Q?width=920&height=276&cropmode=none)
-
 
 ## Improve the Knowledge Base of your QnA Service
 
@@ -41,7 +39,6 @@ Don't forget to save your work after you do the necessary changes to Knowledge B
 
 ![Delete Question/Answer or add an Alternative](https://x2tf1q.by3302.livefilestore.com/y4mD3LEF94-f7x6P3qo94gOpNKvb9JlHUOGZcbyWKB9H0GryRPplqKOspSUzq-bOyIMmd4ySp7Sapkr4HwJjd1oKx1aoUwDgKgIXZNp9UPi-3DDjjhoxm-QwaGus6ucV8Ed_PNS5ywlJkr0Wz2wvOzE9-UTdkCxOVK6t_tAjQySPMroLFB0vTQ38UVWLUlq-vGOireE_60Dhy6YjhnhVSZanA?width=770&height=435&cropmode=none)
 
-
 ## Test your QnA Service
 
 On the main screen of your QnA Service click the **Test** header on the right menu. From this screen you can test the questions and answers of your Knowledge Base. You can change the answer from the left side of the chat box. You can add an alternative question from the right side of the screen. Please find the this page in the image below.
@@ -58,15 +55,13 @@ Once your done with adding data to the Knowledge Base and the testing of your Kn
 
 After clicking the **Publish** button from the main page you will be forwarded to the page with the **Review your changes** header. On this screen you are able to see the newly added, deleted and current number of QnA's. Please check the image below to see this page. Once you are sure with the changes you can click the **Publish** button.
 
-
 ![See changes before publishing the QnA Service](https://w5nbsg.by3302.livefilestore.com/y4mAnrcEtQlHJWDHcPG8OClV59zLXVN0MG7WytadKxV7zNfjFLkr6mMeowO4oD75VRvS9HGqz3ue2weOTLsGzPXh4-HWAieGoi1oEt99AQQwB0SDfs81LgAzFT6_JuzG1A_Din0BvCnLhNa-jUVNn-RXET_4FpjsCdBduPR8932JdY4kZr-5viu0pO18CPVn1LPBWWBEl6F1xxKsmuIc4pX9A?width=1068&height=300&cropmode=none)
 
 Congratulations! If you see a similar screen to the image below this means that you have your QnA Service up and running. There two important keys we have to note down on this page which will help us communicate with our VS project. The first key is the string between **POST/knowledgebases/** and **/generateAnswer**. The second key is the **Ocp-Apim-Subscription-Key**
 
 ![QnA Service Keys](https://wcqaqa.by3302.livefilestore.com/y4mpeG2ffAcnuEaBGhFBjlh-2M7bjS_By_zWHvKbAvO6U3DOmHfsr1fP7BbLKgN2LREcQD8-dZhphmEjNsaFywy1cBzXjRnWDcADlkmfpmHHneo1oTE-IA6Olgf0olJ9lUOC1_uCJvMPjNxdtALLb4xquagf21tpPmqv9hwsVbV8R935pZkT5CD2SrVxhYN96yBrCzxwJnh64AllcRw2v90Kg?width=761&height=386&cropmode=none)
 
-
- ## Add Keys to VS
+## Add Keys to VS
 
  Now it's time to add our keys to our VS project. You should have the two keys mentioned in the section above. The first key is the string between **POST/knowledgebases/** and **/generateAnswer**. The second key is the **Ocp-Apim-Subscription-Key**
 

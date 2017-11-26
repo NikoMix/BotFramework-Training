@@ -19,3 +19,21 @@ Elsewise, if your Environment does not know .sln Files follow the next steps
 ## 02 - Install Visual Studio Community Edition
 
 Go to [https://www.visualstudio.com/de/vs/community/](https://www.visualstudio.com/de/vs/community/) and click "Download VS Community 2017"
+
+## 03 - Fork Repository
+
+## 04 - Install Botframework-Emulator
+
+Go to https://docs.microsoft.com/de-de/bot-framework/debug-bots-emulator and download the Bot Emulator Binaries
+
+## 05 - Install Azure Functions CLI
+
+https://www.npmjs.com/package/azure-functions-cli
+
+## 06 - Install Dotnet-CLI
+
+Go to https://github.com/dotnet/cli and Scroll down to Binaries
+
+## 07 - Install Command Task Runner Extension
+
+Install the https://marketplace.visualstudio.com/items?itemName=MadsKristensen.CommandTaskRunner
