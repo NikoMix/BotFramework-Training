@@ -42,10 +42,12 @@ Now lets go back to Visual Studio and start debugging by pressing F5. This will 
 ![Bot Welcome](https://w5m9sg.by3302.livefilestore.com/y4mmPjiNh0ZHgjrG5SZGp6rtF00vppNcD0OYmlunjPmrZDDk2O5r9F2qW4ahZVHAxNlBVvwkRlJyDxBWVdxhTUk0-qFxkiRm3CbXhMIF5vsbbcddHjDYNVjy4_u_hCvSLZDb9jwnMPZgjNnS6xa-4WbTiDZVasUiGsU0aafl2bjmfNh0NfWe_LOgbeUgQNkKrvdn4JuN5WyJuHhcxhpoOi1ZQ?width=660&height=317&cropmode=none)
 
 If you have trouble connecting the Bot right-click the Project > Properties
+
 ![Project Solution](https://jbbubq.by3302.livefilestore.com/y4mwin7vNGAA-8ZL_pbhCHKkuVbEW3mHEbZ3z6F29o-OmLuaLNTJTF3lZimjBCimL0_5nQNEboao3qG0RXyaqiuq53-pnJjua5SJcbUvHWNYg4b4Nqw8BmpSqfDA1_edW6qUaYgoeagR1AdI-IIGuNGW7beIBa-rhouuE90j2d7HNwRPNEEe1TXrpoy3JPIXUpeHK56DkyUNsglaUpzuyqFWg?width=281&height=129&cropmode=none)
 
 go to the "Web Tab" and press the "Create virtual directory"
 ![CreateVirtualDirectory](https://wcqwqa.by3302.livefilestore.com/y4mm59PQqLfmja3QGmg611bFD7J0aBVB4_XybwjtFIztBJhg4kUNwaaIWeMsEakrKt3L6ysTsLF0gTO5-28QWjoF2Dq8i0faQskZrlC2Rhf60o-n2Xd4EwHM_klhzNRUNg65tKyy0ajXbCO0_8N-LvQjS6K8JKOSWzgohB5jc4De6mTPvXzXVDdMItKF7Ac-8g2bHddC_qdMZN6SqEnP96nvw?width=660&height=320&cropmode=none)
 
 You are able to click on every message and see the Json data transfered as your request/response. This will help you troubleshoot problems.
+
 ![Bot Details](https://w5m9sg.by3302.livefilestore.com/y4mmPjiNh0ZHgjrG5SZGp6rtF00vppNcD0OYmlunjPmrZDDk2O5r9F2qW4ahZVHAxNlBVvwkRlJyDxBWVdxhTUk0-qFxkiRm3CbXhMIF5vsbbcddHjDYNVjy4_u_hCvSLZDb9jwnMPZgjNnS6xa-4WbTiDZVasUiGsU0aafl2bjmfNh0NfWe_LOgbeUgQNkKrvdn4JuN5WyJuHhcxhpoOi1ZQ?width=660&height=317&cropmode=none)
