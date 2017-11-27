@@ -5,4 +5,4 @@ packages/
 *.csproj.user
 .vs/
 *.lock.json
-PostDeployScripts/
+PostDeployScripts/*.PublishSettings
