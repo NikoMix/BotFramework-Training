@@ -55,7 +55,7 @@ Running the Bot Service inside a consumption Plan indicates, that you want to ru
 
 - App Service Plan
 
-On the other Hand you have the traditional approach, to run your code inside an App Service Plan. In context of Azure this is a new Resource and can be imagined as representation of a virtual Machine running in Azure providing all applications assigned to the App Service Plan. But since the virtual Machine is running 24/7 you pay for the service even if its not used. It might be a bit more cheaper overall - but this is strongly dependand on the size of the Machine.
+On the other Hand you have the traditional approach, to run your code inside an App Service Plan. In context of Azure this is a new Resource and can be imagined as representation of a virtual Machine running in Azure providing all applications assigned to the App Service Plan. But since the virtual Machine is running 24/7 you pay for the service even if its not used. It might be a bit more cheaper overall - but this is strongly dependend on the size of the Machine.
 
 Last but not least - **choose the Region West Europe**. Otherwise some steps will not apply to you and you might not be able to follow this Training.
 After you did so, press Create and wait some seconds until the Notifications tell you, your service had been created. Navigate to your newly created Bot Service and you will find yourself in the next Part - setting up the Bot Service.
