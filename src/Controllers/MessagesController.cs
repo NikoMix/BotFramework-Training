@@ -29,7 +29,7 @@ namespace BotTraining.Controllers
                 typingActivity.Type = ActivityTypes.Typing;
                 await client.Conversations.ReplyToActivityAsync(typingActivity);
 
-                await Conversation.SendAsync(activity, () => new BasicLuisDialog());
+                await Conversation.SendAsync(activity, () => IdeaDialog.BuildFormDialog());
                 
             }
             else if (activity.Type == ActivityTypes.ConversationUpdate)
