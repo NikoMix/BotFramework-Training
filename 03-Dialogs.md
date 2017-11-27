@@ -6,3 +6,7 @@
 
 ## Channels
 
+## Welcome the User
+
+### Differences between Channels
+

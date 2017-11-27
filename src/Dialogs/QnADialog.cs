@@ -13,11 +13,10 @@ namespace BotTraining.Dialogs
     {
         public QnaDialog() : base(new QnAMakerService(
             new QnAMakerAttribute(
+                ConfigurationManager.AppSettings["QnaKey"],
                 ConfigurationManager.AppSettings["QnaAppId"],
-                ConfigurationManager.AppSettings["QnaPassword"],
                 ConfigurationManager.AppSettings["DefaultQnAResponse"], 0.3, 1)))
         {
-
         }
     }
 }

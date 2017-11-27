@@ -207,3 +207,5 @@ Don't forget to click the **Save** button to save your changes.
 Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
 
  ![LUIS Key reference](https://jbbwbq.by3302.livefilestore.com/y4mm_TaqolAOGPIwSRLCiYFBiEK72t4C0nUHlbcRP8Pf_tGHd1UM33JBfT6XngZrDXxXwl8zL65c7bTLhEt-OioLkmKyw201Jb0-Hsmt8O1TIwQ6hzlOH-PLl7tHGZg-fSaYDm2a_0NJbwAv9m7cuT_8XqJjRfxHH3xdarrN9hIuCquttrylsJrpqepNpyGRhZFpjcS0-IWkf5DsBG45nnn7g?width=1110&height=92&cropmode=none)
+
+ 

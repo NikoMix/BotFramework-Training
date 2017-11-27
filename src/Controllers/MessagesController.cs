@@ -1,13 +1,14 @@
+using System;
+using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-
-using Microsoft.Bot.Connector;
-using Microsoft.Bot.Builder.Dialogs;
 using System.Web.Http.Description;
-using System.Net.Http;
 using BotTraining.Dialogs;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Connector;
 
-namespace Microsoft.Bot.Sample.SimpleEchoBot
+namespace BotTraining.Controllers
 {
     [BotAuthentication]
     public class MessagesController : ApiController
@@ -20,10 +21,33 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
         [ResponseType(typeof(void))]
         public virtual async Task<HttpResponseMessage> Post([FromBody] Activity activity)
         {
-            // check if activity is of type message
-            if (activity != null && activity.GetActivityType() == ActivityTypes.Message)
+            var client = new ConnectorClient(new Uri(activity.ServiceUrl), new MicrosoftAppCredentials());
+            if (activity.Type == ActivityTypes.Message)
             {
+                // Before we trigger the costly call to LUIS - Indicate to User, that Bot is on it 
+                var typingActivity = activity.CreateReply();
+                typingActivity.Type = ActivityTypes.Typing;
+                await client.Conversations.ReplyToActivityAsync(typingActivity);
+
                 await Conversation.SendAsync(activity, () => new BasicLuisDialog());
+                
+            }
+            else if (activity.Type == ActivityTypes.ConversationUpdate)
+            {
+                IConversationUpdateActivity update = activity;
+                if (update.MembersAdded != null && update.MembersAdded.Any())
+                {
+                    foreach (var newMember in update.MembersAdded)
+                    {
+                        if (newMember.Id != activity.Recipient.Id)
+                        {
+                            var reply = activity.CreateReply();
+                            reply.Text =
+                                $@"Hey there {newMember.Name}. Nice to meet you.";
+                            await client.Conversations.ReplyToActivityAsync(reply);
+                        }
+                    }
+                }
             }
             else
             {
@@ -38,12 +62,6 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
             {
                 // Implement user deletion here
                 // If we handle user deletion, return a real message
-            }
-            else if (message.Type == ActivityTypes.ConversationUpdate)
-            {
-                // Handle conversation state changes, like members being added and removed
-                // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
-                // Not available in all channels
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {

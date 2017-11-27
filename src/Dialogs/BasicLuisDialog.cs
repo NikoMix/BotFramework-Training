@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Threading.Tasks;
 
 using Microsoft.Bot.Builder.Azure;
@@ -16,49 +17,38 @@ namespace BotTraining.Dialogs
         public BasicLuisDialog() : base(
             new LuisService(
                 new LuisModelAttribute(
-                    Utils.GetAppSetting("LuisAppId"),
-                    Utils.GetAppSetting("LuisAPIKey"))))
+                    ConfigurationManager.AppSettings["LuisAppId"],
+                    ConfigurationManager.AppSettings["LuisKey"], 
+                    LuisApiVersion.V2, 
+                    "westeurope.api.cognitive.microsoft.com")))
         {
         }
 
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
-            await context.Forward(new QnaDialog(), Resume, context.Activity, default(System.Threading.CancellationToken));
+            var item = await activity;
+            await context.Forward(new QnaDialog(), Resume, item);
         }
 
         [LuisIntent("GiveFeedback")]
         public async Task Feedback(IDialogContext context,IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             var item = await activity;
-            await context.Forward(FeedbackDialog.BuildFormDialog(), ResumeFeedback, item);
-
-            // context.Wait(MessageReceived);
-        }
-
-        private Task ResumeFeedback(IDialogContext context, IAwaitable<object> result)
-        {
-            throw new NotImplementedException();
+            await context.Forward(FeedbackDialog.BuildFormDialog(), Resume, item);
         }
 
         [LuisIntent("GiveIdea")]
         public async Task Idea(IDialogContext context,IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             var item = await activity;
-            await context.Forward(IdeaDialog.BuildFormDialog(), ResumeIdea, item);
-
-           // context.Wait(MessageReceived);
+            await context.Forward(IdeaDialog.BuildFormDialog(), Resume, item);
         }
 
-        private Task ResumeIdea(IDialogContext context, IAwaitable<object> result)
+        private async Task Resume(IDialogContext context, IAwaitable<object> result)
         {
-            throw new NotImplementedException();
-        }
-
-        private Task Resume(IDialogContext context, IAwaitable<object> result)
-        {
-            context.SayAsync("Can I help with something else?");
-            return Task.CompletedTask;
+            await context.SayAsync("Can I help with something else?");
+            context.Wait(MessageReceived);
         }
     }
 }
