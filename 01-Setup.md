@@ -1,6 +1,11 @@
 # Setup your Development Environment
 
-## 01 - Download the Source Code
+## 01 - Fork Repository
+
+To work with your own copy of this code simply click on Fork and create your own duplication of this repo.
+![Fork](https://xjm6sg.by3302.livefilestore.com/y4mxQshF5uY28qpkoR2qQ8Qe9VugAgr9iAm-OkzAYLtKb-hkybS9nKKBRsEhJNtCS4ygIQaBeGVcU9iw028XbwC0sUa2EJduxIP6T1YoI0zH9XXTYP4YV-t0t3qk8TUoLIgMC3afpDFH51aJ6RHiBr7Hh0UkAophmYyKX8fom4jfizOie__IDrSuJAsg4fG2v737j4RiMGUp2OusoBTZGKyeA?width=660&height=110&cropmode=none)
+
+## 02 - Download the Source Code
 
 First go to the start Page of the Repository and download the whole Repository as a .zip File.
 If you don't know how - just follow the Steps in the Images bellow.
@@ -20,5 +25,5 @@ Elsewise, if your Environment does not know .sln Files follow the next steps
 
 Go to [https://www.visualstudio.com/de/vs/community/](https://www.visualstudio.com/de/vs/community/) and click "Download VS Community 2017"
 
-## 03 - Fork Repository
-
+Inside the Installer choose at least those Options
+![Installer](https://lpezmg.by3302.livefilestore.com/y4mtGT4HIV5UcLZ8ypeA8H91zIe6hD6I8NbHfiplNjKiUsmw9uF4Q92fz32tIMpd4qdygvUV70h_cSY3zNor4Kxqisqj4yzoFjetunOVMopZkvt3d9gKYQY3jwHnO-uOdB06Q3scqtYB5j642AAlExVkoPZ0nLHDEOeJaJ32u5_xvrwSUBXFhEBaesDJfsP1c6Xxwt-nXDmsJqsm_tVIaYuiA?width=660&height=400&cropmode=none)
