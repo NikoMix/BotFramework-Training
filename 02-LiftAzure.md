@@ -40,7 +40,7 @@ After you clicked the "Add"-Button a search will appear. To quickly find the rig
 
 Click on the "Bot Service (preview)"-Entry in the list and you will get the Creation Blade again. Only this time, you will need to provide different Inputs.
 
-![Create Bot Service](https://xjm9sg.by3302.livefilestore.com/y4mErg2rs0q_8jiDmpoPc_Oz0nib1pkzl1sIdgqlaTMGLf-JaoVlZOvgmcYQv0I7yxGitmfXz3Py5m_V2qQh9bvwov4j4-G4Z1l7EjTiyaUCGFYlW-yohnzFxXfW2rj1Peqw8gScgyuJlWEyryLHGGpF8jEkBtLDChdniH5P5t4b5Qg5praX_BtZEUDRpU0eonmobZ6c0YMQ3vEuoyBMMUBsw?width=317&height=515&cropmode=none)
+![Create Bot Service](https://wcqzqa.by3302.livefilestore.com/y4mlF6CbKyz3AFTsDgOCkq3Gz5bIviFSREzKTnbmjhZMTD1nLgyh1EdAvD8qHRYZxDsuzYr-g7M2G75fR4fIjV9uhDYauyiS9HojlZIvw-pC0_QCFfBLu9bMKhSPd-MN2a6WB2092U1vMz87k2JP0uEL58OiqchHNxDOTpJJoIuxl5ifaiOrOzP0uMlFebecirzh1N2IKtdG29NgXf-CNziYg?width=317&height=418&cropmode=none)
 
 Let me go a bit more into detail about those values this time. First of all the "App name" - which needs to be a unique sub-domain for .azurewebsites.net.
 This means every website hosted in an Azure App Services needs its own unique name. Also that our "Bot Service" is "Website" as well. Based on the simple Fact, that our Bot Service consists of an Web API Controller extended by a Framework called the Microsoft Bot Framework. The Framework allows handling of special Message Formats and supports several Channels which allows you to attach your Bot to Facebook, Slack, Skype, etc. very easily.
@@ -80,6 +80,8 @@ we go for **Basic** for learning purposes as well as for reasons to reduce Probl
 ![CompleteResource](https://ygtx1q.by3302.livefilestore.com/y4mt7FYtdBOOLPqqY8n3I-iy0jPAaK0eXJzrkOiftVglQxWmWdeB1jEFeVRO0_MGHyDmWcls7MEAH2N6CdR81q-fO-h75K0-rut-H5YPgdWwLQ915iuraRODz8E0Y_jznmKSMS_7jVkc9wxpXgpxcj2qKZerewu6Vnuctfdrf3x2KBm9OeOtMEbz9DWG5UmvLbUmWdkJ1XJ9gN8pZbms77mFw?width=256&height=188&cropmode=none)
 
 ![FinishedResource](https://xjm5sg.by3302.livefilestore.com/y4m1YU7j5uYT0rloKTwhevVDNzzy6ndYNxNtUpo8HqkVJk8hK6QCMEKkr0Y_yqTfppRnt81BXDthTVx3u-YjzFueKvJScyM6zduO5D4cD4ohlvzP9Nh2CrOwOBJuA0y29t0foJSh1Llj03N3jULnj84B4VDL2EUdAAEY-HT246ltWAU4ZK6FeY3hO0X7VcKEyA3mR33Mud5BDPu50NOQP7P8Q?width=660&height=482&cropmode=none)
+
+Now that we set up our App Service - or Infrastructure - we have everything to deploy our application to the cloud.
 
 ![Extend Deployment](https://wsqsqa.by3302.livefilestore.com/y4m9FUqZVM05oos5DPH3Zc2m6rgX4ByozInyaPNHDgAyDjt0zJtQjX5XstSoWnm64JQGVutvocEuTQTWfBCSkoQun4EAdcR55lFuX3LhaYIOA8cZPAfZOmdzp3Oh2qui5zQlq38IrkmaROEGX09iCyk5jpM1Kbjs7ZNP3_CBGc2RURdjHnrw929Xa31VLLXRV6gwtgbJuRjnELmBpD2Ygb5kA?width=256&height=138&cropmode=none)
 
