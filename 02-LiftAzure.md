@@ -103,4 +103,4 @@ Now that we set up our App Service - or Infrastructure - we have everything to d
 
 ![First Test](https://jrbqbq.by3302.livefilestore.com/y4m_oIDkedjk90mS7uGCWzASAixCV2rzgN-qmr6dQo168PMcpTPgxcxHIZpJy9zaueegDniw1h7pVXuw9xrZGGgdgRdfPQJFQoI0ncnxE45QWU66A2gGYgOvy0CAzq6tWJoCa0Bvd9KWLkF-lORcW8M2fFy2Mf-BwZZKY4DdFIVOIRamUSQqGNChBDRRl5WBvQDwOqVKjhl4lF8IvEirK62aA?width=405&height=484&cropmode=none)
 
-!! TODO !! Generate Access Token for GitHub and Authorize GitHub Workflow
+Now our Bot Service is running inside Azure and available worldwide

@@ -104,4 +104,16 @@ To give you the big picture, VS first checks if the dialog entered by the user i
 
 As you can see in the image below it is important to give reference to the **Web.config** file because that is where we stored our keys. You can also find a **DefualtQnAResponse** in the **Web.config** file. This is the response sent to the user if the QnA Maker cannot generate and answer. This means that if we cannot find the corresponding LUIS intent we are forwarded to the Qna Maker and if QnA Maker also cannot give a response the worst case scenario is the **DefualtQnAResponse**.
 
-![Base part of the Luis Dialog](https://kyinka.by3302.livefilestore.com/y4mqKEWr8PSAxuQtu8dHg07Oh_Dgin7AHaShEW9RhIkmRBxuhqVuNd-SV8Wpi2-4i6AJn0M89ssLnQNOjuboG5nQT6WTHcqa8CHF7-bPb61hSjzoRmIuAiiZAQHpyjJ-9ckzU2CJhGEqSyq_tbDHsLDVR8cSUrYyccWYK5t8D3QD9V9v_xrioLPlXIcjVghSRrW6Wcqltqo9aDKuGOtD0zCfw?width=595&height=239&cropmode=none)
+```csharp
+ [Serializable]
+    public class QnaDialog : QnAMakerDialog
+    {
+        public QnaDialog() : base(new QnAMakerService(
+            new QnAMakerAttribute(
+                ConfigurationManager.AppSettings["QnaKey"],
+                ConfigurationManager.AppSettings["QnaAppId"],
+                ConfigurationManager.AppSettings["DefaultQnAResponse"], 0.3, 1)))
+        {
+        }
+    }
+```
