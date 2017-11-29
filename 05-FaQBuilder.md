@@ -87,6 +87,21 @@ Don't forget to click the **Save** button to save your changes.
 
   ![Add QnA Maker Keys to Application Settings](https://78yhwa.by3302.livefilestore.com/y4mybv48TGGm4acAfdekN7SON6ZNRgdcW_AqRQyFYhxr9KrjA0M6AwG6iJkywf-et5DxkcKtnjjMDyyJeJi6yKOvT92X-jpgjksZT1eVFhKAKMjWCsBfyJ7x-Xytj2ZqTUKMsn9Pwg5WcR5_E88MHwA4_AL0gMtfbTfyDsNry50KQ8anMggsUvT93bx5gdrojUiHsAKypYtAJv6tr1px3Rb5g?width=1016&height=213&cropmode=none)
 
-Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
+Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. We need to enter the keys that we previously entered to Microsoft Azure to the **Web.config** aswell. You should fill in the page that looks similar to the image below.
 
- ![QnA Maker Key reference](https://ijvjyg.by3302.livefilestore.com/y4mF6d5M7nRjdg-u2togw5-140Xxj4nNGrGY85l5_3UQVfDa-dIiKE0wmEECcOUlL5WMR6Nr5vysDaiWqgtK6QHaNZ73WdvJ51k6O69NR_wutCuQMEF5LtUegfilms8ywhsMxhfnOpEM8LAs-ctuqvGlbaaq5AHWx01qUx0WqN2Q5Mi9GqM7WrczqQYVmDya4ALETq4dYBgFddX3HtlZOtdJA?width=354&height=80&cropmode=none)
+   ![Web.config file](https://78yfwa.by3302.livefilestore.com/y4mpQEVgEYCr8sT6H1KgHmL01WRhxnXElp-lMPjRza84MD8ZRjHoQ_Y2_Wcdot1jJEkTML32YtTDmhMkWTp6-4XQcVd2GNAiy-dja_Jq1YhYklYkcyIDuzZmsdN-Pd7hzd2ecsZJX6BGck3K_SYHstYpaNtjn4M-ymi6CrxKOg6j76lR1kEx4ddMKQYaJOoDUMn5d0oWsN7h4ebdJ_0k7JEMw?width=680&height=185&cropmode=none)
+
+
+## Understanding the VS code
+
+This is the last part of the QnA Maker section. Now that we have everything ready it's time to add some codes to VS so that we can forward the user to our QnA Maker.
+
+As you can remember from the LUIS section of this document, the communication between the LUIS and VS is don by using the LUIS Intents. This is very similar for the QnA Maker as well. If the Intent is not found in LUIS so if the intent is **None** then VS forwards us to the QnA Maker. 
+
+To give you the big picture, VS first checks if the dialog entered by the user is connected to any LUIS intent. If it is then we are forwarded to the specific LUIS intent. If nothing is found we are forwarded to the QnA Maker. Please find the piece of code below where we get forwarded to the QnA Maker dialog.
+
+![Luis Intent None forwards us to QnA Maker](https://lpe0mg.by3302.livefilestore.com/y4m6sF7qcdqs4plKk8AVPHUJBaaykC-5Q-ZsdQj3UeTZjpm3lEf2G7LQDpAz_NIuk1bLNrQ6lm_KwGYantQ7pCy1peeIKxeHgYn5jRPDJZVocaAfRq3g8AazrfK8Pbv9ReNuU6w0b0QBVtimyka0UY_hihwngWhU9dol4v_mNcypZAXFUgQsq_WWytwr_KQfVnftmsGXTCH3YiFNXPN2uYKbw?width=851&height=137&cropmode=none)
+
+As you can see in the image below it is important to give reference to the **Web.config** file because that is where we stored our keys. You can also find a **DefualtQnAResponse** in the **Web.config** file. This is the response sent to the user if the QnA Maker cannot generate and answer. This means that if we cannot find the corresponding LUIS intent we are forwarded to the Qna Maker and if QnA Maker also cannot give a response the worst case scenario is the **DefualtQnAResponse**.
+
+![Base part of the Luis Dialog](https://kyinka.by3302.livefilestore.com/y4mqKEWr8PSAxuQtu8dHg07Oh_Dgin7AHaShEW9RhIkmRBxuhqVuNd-SV8Wpi2-4i6AJn0M89ssLnQNOjuboG5nQT6WTHcqa8CHF7-bPb61hSjzoRmIuAiiZAQHpyjJ-9ckzU2CJhGEqSyq_tbDHsLDVR8cSUrYyccWYK5t8D3QD9V9v_xrioLPlXIcjVghSRrW6Wcqltqo9aDKuGOtD0zCfw?width=595&height=239&cropmode=none)

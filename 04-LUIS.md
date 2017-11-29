@@ -204,8 +204,23 @@ Don't forget to click the **Save** button to save your changes.
 
   ![Add Keys to Application Settings](https://wcqyqa.by3302.livefilestore.com/y4mIZBEFB4fEjuJ933k1ZU6fnvkR5-QlS1F6n2LeJwkcQa-WjK7xICZbIxSbk0G4_88oQ_U469vAPANdYjyjfAIWkhCJk-LCRC0nWHitX6SCO7EKrGCYFL2-tomKuZlSUQfPfkz4fZ4UVKnyGXaiLmAMiAh4Az-SkPT_QYCEFAicvjrNWkpnLmKimYJ2LhIrsgUDk0P1dt1crVmgBpBM-DQEw?width=1032&height=151&cropmode=none)
 
-Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. In VS make sure you are using the **Key** names in the image above. You should add your keys as shown in the image below.
+Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. We need to enter the keys that we previously entered to Microsoft Azure to the **Web.config** aswell. You should fill in the page that looks similar to the image below.
 
- ![LUIS Key reference](https://jbbwbq.by3302.livefilestore.com/y4mm_TaqolAOGPIwSRLCiYFBiEK72t4C0nUHlbcRP8Pf_tGHd1UM33JBfT6XngZrDXxXwl8zL65c7bTLhEt-OioLkmKyw201Jb0-Hsmt8O1TIwQ6hzlOH-PLl7tHGZg-fSaYDm2a_0NJbwAv9m7cuT_8XqJjRfxHH3xdarrN9hIuCquttrylsJrpqepNpyGRhZFpjcS0-IWkf5DsBG45nnn7g?width=1110&height=92&cropmode=none)
+   ![Web.config file](https://78yfwa.by3302.livefilestore.com/y4mpQEVgEYCr8sT6H1KgHmL01WRhxnXElp-lMPjRza84MD8ZRjHoQ_Y2_Wcdot1jJEkTML32YtTDmhMkWTp6-4XQcVd2GNAiy-dja_Jq1YhYklYkcyIDuzZmsdN-Pd7hzd2ecsZJX6BGck3K_SYHstYpaNtjn4M-ymi6CrxKOg6j76lR1kEx4ddMKQYaJOoDUMn5d0oWsN7h4ebdJ_0k7JEMw?width=680&height=185&cropmode=none)
 
- 
+
+## Understanding the VS code
+
+This is the last part of the LUIS section. Now that we have everything ready it's time to add some codes to VS so that we can forward the user to our wonderful LUIS App.
+
+Firstly we need make sure that we have our LuisDialog() as *Serializable*. We do this because we are going to be moving back and forth from other apps and services and we want to make sure that VS keeps track of our latest state in the VS code. As you can see in the image below it is important to give reference to the **Web.config** file because that is where we stored our keys. Please check the image below to see the base part of the Luis Dialog.
+
+![Base part of the Luis Dialog](https://ijvhyg.by3302.livefilestore.com/y4m_jKZXlcYLLTqp3dKvZhUNs0vpkXxfTkDR9TwQTTNYMQLD6AkcOFf-Ekc8eTyYJoDftdYTbzcT7mvTS_WMjhdf_pQH7vy3iHnhCMqUAPwGLVQtSw6l5Zi13vavCt2pL5I2_KM6HbRj73XB4nQsRW4JFZO1utZpQJ3tPXnOTiYgeMNau-6PdTHMguwF8Qz_75HOn5PCgm8BndnBFB24UNjFw?width=486&height=260&cropmode=none)
+
+
+To explain how the communication between the LUIS App and VS is done in a simple way, we can say that the communication is done using the LUIS Intent. As you remember in the previous sections we entered Intent's to our LUIS App. Now we will be checking from VS if the received message by the user had any connection with the previously saved Intents to our LUIS App. We do this by adding a ** [LuisIntent("*Intent Name*")]** in front of the corresponding intent section in our code. 
+
+The **context.Forward** is used for passing the dialog to the child dialog. In this case the child dialog is the Luis Dialog. After the Luis Dialog is completed the **context.Forward** will forward our state to the **Resume** function. As you can also find below the **Resume** function puts us to the **context.Wait** stage. This is the stage where we wait for a new input from the user.
+
+
+   ![Communication between LUIS and VS](https://yuadea.by3302.livefilestore.com/y4mX22R4PUNXDvdnJ6_LLfweOuO_1Lj-7idH--1qyyFjXHFcpH3h04iKXIcNAtQvFNdzi1j-YnHn4f4JrmLhNEVzysTfxzpGqZHPnRRWB4GB-KPocobOeZxmDZhjzpF91r7MQ0AuiFFMGN5QAjqxXbPwdAc2sL26f6gtHPRx28AUSLT3YAvJ5q9Z8-th0xlX3qv0yOvVt2OSXShqOBbeEZQKg?width=831&height=396&cropmode=none)
