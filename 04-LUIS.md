@@ -148,7 +148,7 @@ From the screen that pops up you will see a similar screen to the image below. Y
 
 You might have several Tenant names in the drop-down or maybe only even one. Let's check if what our correct Tenant name is.
 
-We go to Microsoft Azure. On the right top of the page you will see your email address and your current Directory. Make sure you are on the correct Directory. Now mouse over your email and you will see a hover screen similar to the image below. 
+We go to Microsoft Azure. On the right top of the page you will see your email address and your current Directory. Make sure you are on the correct Directory. Now mouse over your email and you will see a hover screen similar to the image below.
 
 Your Tenant name is the string next to your Directory name.
 
@@ -168,7 +168,6 @@ Once the steps above are completed you should see your new key is added on the *
 
  ![New Key Added](https://jbbzbq.by3302.livefilestore.com/y4mtcro2KmONlLxyJzHOP8fw7sUxqfKl7vQwHFoEwm7f1e_oOZQpCHUfgZqh9onvPNgs6C5GiLiCle_shsKECo7oVNTr43H07kvuzP0oRuQ8q4vM9MyuPtX7LYndfseFgeNNzDAv0_ZdTLWwGaD-XTOsSydGWI0AyOnOW-2nfsUHUXMA-Wc_DIE2XOgYw-e6ks2AUUMkbycxiJNwHluXDMwFw?width=1353&height=262&cropmode=none)
 
-
 ## Publish your LUIS App
 
 Select **Publish App** from the main left menu of your LUIS App. Make sure you added the new Key as explained in the previous section. You should have screen similar to the image below.
@@ -179,8 +178,7 @@ Now please click the **Publish to production slot**. If the publish is successfu
 
   ![Publish Information](https://ijvmyg.by3302.livefilestore.com/y4mjfqhoEjZqf19zgR7dFbSTVCNRU8qpCg4SsLjrU2Cvt-M5O0-h8QuS0v-y746ocYgSjIX4NqmOJT3lkk0OLYFQYfnvSL5aXEu6BqIAOxESO-aQvdFeiCPKKalWrO9j7KQ9i7vM8zpSfUlPJhZi9wdkBkO5YyiqMnXdaK_WMrf7G1vn1OMkPyz6qsagdsxTXnqYoLqZ9oLnTWBu1c_JRdNXQ?width=431&height=115&cropmode=none)
 
-
-  ## Add Keys to Microsoft Azure Web App
+## Add Keys to Microsoft Azure Web App
 
 Now it's time to add our keys to our Microsoft Azure Web App. We always have the chance to save the keys to VS but for security reasons its always better to save the keys to the Microsoft Azure Web App and then give a reference to the Microsoft Azure Web App from VS. You should find two keys: **App ID** and **Key 1**
 
@@ -192,22 +190,15 @@ You should add these numbers to your Microsoft Azure Web App. Open the Microsoft
 
    ![Web App Application Settings](https://w5mqsg.by3302.livefilestore.com/y4m5NbT5UBfeDVbsJwQ6P5zwq6jGuBmZz2rDnKjgAyTmj0ZoxX045SKrPtwA1M9C_rZmjXf4fqILiWOJQvgj-3VZ96Fb1bLpcw6W0CANfOEPrsz8waeCQo6pQ5DH1A1dkunrpPCinQul9EEaVHToyUal-CtNOxroi2Uy230qO8oaeyRewqJbu2MziyKMdP2gUIj3nw5aRHz57j_mtv38BHZCQ?width=193&height=266&cropmode=none)
 
-Now we will add the two keys to the **App settings** section. In the **App settings** section each line is formed of **Key** and **Value**. 
+Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. We need to enter the keys that we previously entered to Microsoft Azure to the **Web.config** aswell. You should fill in the page that looks similar to this.
 
-The **Key** is kind of like a mask to the string you will save. So you will use this **Key** in VS. By this way if someone gets their hands on your script they will not be able to reach your keys.
-
-The **Value** is the real key value that you will be masking.
-
-Please check the image below. You should add your **App ID** and **Key 1** strings to the **App settings** section.
-
-Don't forget to click the **Save** button to save your changes.
-
-  ![Add Keys to Application Settings](https://wcqyqa.by3302.livefilestore.com/y4mIZBEFB4fEjuJ933k1ZU6fnvkR5-QlS1F6n2LeJwkcQa-WjK7xICZbIxSbk0G4_88oQ_U469vAPANdYjyjfAIWkhCJk-LCRC0nWHitX6SCO7EKrGCYFL2-tomKuZlSUQfPfkz4fZ4UVKnyGXaiLmAMiAh4Az-SkPT_QYCEFAicvjrNWkpnLmKimYJ2LhIrsgUDk0P1dt1crVmgBpBM-DQEw?width=1032&height=151&cropmode=none)
-
-Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. We need to enter the keys that we previously entered to Microsoft Azure to the **Web.config** aswell. You should fill in the page that looks similar to the image below.
-
-   ![Web.config file](https://78yfwa.by3302.livefilestore.com/y4mpQEVgEYCr8sT6H1KgHmL01WRhxnXElp-lMPjRza84MD8ZRjHoQ_Y2_Wcdot1jJEkTML32YtTDmhMkWTp6-4XQcVd2GNAiy-dja_Jq1YhYklYkcyIDuzZmsdN-Pd7hzd2ecsZJX6BGck3K_SYHstYpaNtjn4M-ymi6CrxKOg6j76lR1kEx4ddMKQYaJOoDUMn5d0oWsN7h4ebdJ_0k7JEMw?width=680&height=185&cropmode=none)
-
+```xml
+<appSettings>
+  <!-- ... -->
+    <add key="LuisAppId" value="" />
+    <add key="LuisKey" value="" />
+</appSettings>
+```
 
 ## Understanding the VS code
 
@@ -215,12 +206,44 @@ This is the last part of the LUIS section. Now that we have everything ready it'
 
 Firstly we need make sure that we have our LuisDialog() as *Serializable*. We do this because we are going to be moving back and forth from other apps and services and we want to make sure that VS keeps track of our latest state in the VS code. As you can see in the image below it is important to give reference to the **Web.config** file because that is where we stored our keys. Please check the image below to see the base part of the Luis Dialog.
 
-![Base part of the Luis Dialog](https://ijvhyg.by3302.livefilestore.com/y4m_jKZXlcYLLTqp3dKvZhUNs0vpkXxfTkDR9TwQTTNYMQLD6AkcOFf-Ekc8eTyYJoDftdYTbzcT7mvTS_WMjhdf_pQH7vy3iHnhCMqUAPwGLVQtSw6l5Zi13vavCt2pL5I2_KM6HbRj73XB4nQsRW4JFZO1utZpQJ3tPXnOTiYgeMNau-6PdTHMguwF8Qz_75HOn5PCgm8BndnBFB24UNjFw?width=486&height=260&cropmode=none)
+```csharp
+[Serializable]
+public class BasicLuisDialog : LuisDialog<object>
+{
+    public BasicLuisDialog() : base(
+        new LuisService(
+            new LuisModelAttribute(
+                ConfigurationManager.AppSettings["LuisAppId"],
+                ConfigurationManager.AppSettings["LuisKey"],
+                LuisApiVersion.V2,
+                "westeurope.api.cognitive.microsoft.com")))
+    {
+    }
+}
+```
 
-
-To explain how the communication between the LUIS App and VS is done in a simple way, we can say that the communication is done using the LUIS Intent. As you remember in the previous sections we entered Intent's to our LUIS App. Now we will be checking from VS if the received message by the user had any connection with the previously saved Intents to our LUIS App. We do this by adding a ** [LuisIntent("*Intent Name*")]** in front of the corresponding intent section in our code. 
+To explain how the communication between the LUIS App and VS is done in a simple way, we can say that the communication is done using the LUIS Intent. As you remember in the previous sections we entered Intent's to our LUIS App. Now we will be checking from VS if the received message by the user had any connection with the previously saved Intents to our LUIS App. We do this by adding a ** [LuisIntent("*Intent Name*")]** in front of the corresponding intent section in our code.
 
 The **context.Forward** is used for passing the dialog to the child dialog. In this case the child dialog is the Luis Dialog. After the Luis Dialog is completed the **context.Forward** will forward our state to the **Resume** function. As you can also find below the **Resume** function puts us to the **context.Wait** stage. This is the stage where we wait for a new input from the user.
 
+```csharp
+[LuisIntent("GiveFeedback")]
+public async Task Feedback(IDialogContext context,IAwaitable<IMessageActivity> activity, LuisResult result)
+{
+    var item = await activity;
+    await context.Forward(FeedbackDialog.BuildFormDialog(), Resume, item);
+}
 
-   ![Communication between LUIS and VS](https://yuadea.by3302.livefilestore.com/y4mX22R4PUNXDvdnJ6_LLfweOuO_1Lj-7idH--1qyyFjXHFcpH3h04iKXIcNAtQvFNdzi1j-YnHn4f4JrmLhNEVzysTfxzpGqZHPnRRWB4GB-KPocobOeZxmDZhjzpF91r7MQ0AuiFFMGN5QAjqxXbPwdAc2sL26f6gtHPRx28AUSLT3YAvJ5q9Z8-th0xlX3qv0yOvVt2OSXShqOBbeEZQKg?width=831&height=396&cropmode=none)
+[LuisIntent("GiveIdea")]
+public async Task Idea(IDialogContext context,IAwaitable<IMessageActivity> activity, LuisResult result)
+{
+    var item = await activity;
+    await context.Forward(IdeaDialog.BuildFormDialog(), Resume, item);
+}
+
+private async Task Resume(IDialogContext context, IAwaitable<object> result)
+{
+    await context.SayAsync("Can I help with something else?");
+    context.Wait(MessageReceived);
+}
+```
