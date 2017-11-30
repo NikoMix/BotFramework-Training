@@ -65,32 +65,23 @@ Congratulations! If you see a similar screen to the image below this means that 
 
 ![QnA Service Keys](https://wcqaqa.by3302.livefilestore.com/y4mpeG2ffAcnuEaBGhFBjlh-2M7bjS_By_zWHvKbAvO6U3DOmHfsr1fP7BbLKgN2LREcQD8-dZhphmEjNsaFywy1cBzXjRnWDcADlkmfpmHHneo1oTE-IA6Olgf0olJ9lUOC1_uCJvMPjNxdtALLb4xquagf21tpPmqv9hwsVbV8R935pZkT5CD2SrVxhYN96yBrCzxwJnh64AllcRw2v90Kg?width=761&height=386&cropmode=none)
 
- ## Add Keys to Microsoft Azure Web App
+## Add Keys to Microsoft Azure Web App
 
-Now it's time to add our keys to our Microsoft Azure Web App. We always have the chance to save the keys to VS but for security reasons its always better to save the keys to the Microsoft Azure Web App and then give a reference to the Microsoft Azure Web App from VS. 
 
 You should have the two keys mentioned in the section above. The first key is the string between **POST/knowledgebases/** and **/generateAnswer**. The second key is the **Ocp-Apim-Subscription-Key**.
 
-You should add these numbers to your Microsoft Azure Web App. Open the Microsoft Azure Web App you created in the previous steps. In the left menu bar find **Application Settings** under the **Settings** part. The left menu should be similar to the image below.
+We need to enter those keys to the **Web.config** - File in our Solution.
 
-   ![Web App Application Settings](https://w5mqsg.by3302.livefilestore.com/y4m5NbT5UBfeDVbsJwQ6P5zwq6jGuBmZz2rDnKjgAyTmj0ZoxX045SKrPtwA1M9C_rZmjXf4fqILiWOJQvgj-3VZ96Fb1bLpcw6W0CANfOEPrsz8waeCQo6pQ5DH1A1dkunrpPCinQul9EEaVHToyUal-CtNOxroi2Uy230qO8oaeyRewqJbu2MziyKMdP2gUIj3nw5aRHz57j_mtv38BHZCQ?width=193&height=266&cropmode=none)
+```xml
+<appSettings>
+  <!-- ... -->
+  <add key="QnaAppId" value="Here goes the GUID from the first string" />
+  <add key="QnaKey" value="Here goes the Ocp-Apim-Subscription-Key" />
+  <add key="DefaultQnAResponse" value="Nothing found :(" />
+</appSettings>
+```
 
-Now we will add the two keys to the **App settings** section. In the **App settings** section each line is formed of **Key** and **Value**. 
-
-The **Key** is kind of like a mask to the string you will save. So you will use this **Key** in VS. By this way if someone gets their hands on your script they will not be able to reach your keys.
-
-The **Value** is the real key value that you will be masking.
-
-Please check the image below. You should add your keys to the **App settings** section.
-
-Don't forget to click the **Save** button to save your changes.
-
-  ![Add QnA Maker Keys to Application Settings](https://78yhwa.by3302.livefilestore.com/y4mybv48TGGm4acAfdekN7SON6ZNRgdcW_AqRQyFYhxr9KrjA0M6AwG6iJkywf-et5DxkcKtnjjMDyyJeJi6yKOvT92X-jpgjksZT1eVFhKAKMjWCsBfyJ7x-Xytj2ZqTUKMsn9Pwg5WcR5_E88MHwA4_AL0gMtfbTfyDsNry50KQ8anMggsUvT93bx5gdrojUiHsAKypYtAJv6tr1px3Rb5g?width=1016&height=213&cropmode=none)
-
-Once you save the two keys to your Microsoft Azure Web App, its time to add the keys to your VS project. We need to enter the keys that we previously entered to Microsoft Azure to the **Web.config** aswell. You should fill in the page that looks similar to the image below.
-
-   ![Web.config file](https://78yfwa.by3302.livefilestore.com/y4mpQEVgEYCr8sT6H1KgHmL01WRhxnXElp-lMPjRza84MD8ZRjHoQ_Y2_Wcdot1jJEkTML32YtTDmhMkWTp6-4XQcVd2GNAiy-dja_Jq1YhYklYkcyIDuzZmsdN-Pd7hzd2ecsZJX6BGck3K_SYHstYpaNtjn4M-ymi6CrxKOg6j76lR1kEx4ddMKQYaJOoDUMn5d0oWsN7h4ebdJ_0k7JEMw?width=680&height=185&cropmode=none)
-
+If you have different Models for Development, than you have for Production you're always able to override those Values for the Azure App Service through the Application Settings. But in this sample we will deliver our Keys while Deployment - *just be sure to not check-in those Keys in a public repository like Github. Elsewise other People are able to take those keys and create costs by using your services.
 
 ## Understanding the VS code
 
@@ -100,20 +91,31 @@ As you can remember from the LUIS section of this document, the communication be
 
 To give you the big picture, VS first checks if the dialog entered by the user is connected to any LUIS intent. If it is then we are forwarded to the specific LUIS intent. If nothing is found we are forwarded to the QnA Maker. Please find the piece of code below where we get forwarded to the QnA Maker dialog.
 
-![Luis Intent None forwards us to QnA Maker](https://lpe0mg.by3302.livefilestore.com/y4m6sF7qcdqs4plKk8AVPHUJBaaykC-5Q-ZsdQj3UeTZjpm3lEf2G7LQDpAz_NIuk1bLNrQ6lm_KwGYantQ7pCy1peeIKxeHgYn5jRPDJZVocaAfRq3g8AazrfK8Pbv9ReNuU6w0b0QBVtimyka0UY_hihwngWhU9dol4v_mNcypZAXFUgQsq_WWytwr_KQfVnftmsGXTCH3YiFNXPN2uYKbw?width=851&height=137&cropmode=none)
+```csharp
+[LuisIntent("None")]
+public async Task NoneIntent(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
+{
+    var item = await activity;
+    await context.Forward(new QnaDialog(), Resume, item);
+}
+```
 
 As you can see in the image below it is important to give reference to the **Web.config** file because that is where we stored our keys. You can also find a **DefualtQnAResponse** in the **Web.config** file. This is the response sent to the user if the QnA Maker cannot generate and answer. This means that if we cannot find the corresponding LUIS intent we are forwarded to the Qna Maker and if QnA Maker also cannot give a response the worst case scenario is the **DefualtQnAResponse**.
 
 ```csharp
  [Serializable]
-    public class QnaDialog : QnAMakerDialog
-    {
-        public QnaDialog() : base(new QnAMakerService(
-            new QnAMakerAttribute(
-                ConfigurationManager.AppSettings["QnaKey"],
-                ConfigurationManager.AppSettings["QnaAppId"],
-                ConfigurationManager.AppSettings["DefaultQnAResponse"], 0.3, 1)))
-        {
-        }
-    }
+  public class QnaDialog : QnAMakerDialog
+  {
+      public QnaDialog() : base(new QnAMakerService(
+          new QnAMakerAttribute(
+              ConfigurationManager.AppSettings["QnaKey"],
+              ConfigurationManager.AppSettings["QnaAppId"],
+              ConfigurationManager.AppSettings["DefaultQnAResponse"], 0.3, 1)))
+      {
+      }
+  }
 ```
+
+Note that the QnaKey Setting comes first, followed by the AppId. If you mix them up, you will recognize some Exceptions. 
+The Value 0.3 defines the Score Treshhold . If more than one confident QnA Pair is identified the last number declares how many QnA Pairs should be retrieved.
+Since we only want to output the most confident QnA Pair - we limit this to 1.
