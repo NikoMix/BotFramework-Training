@@ -2,7 +2,7 @@
 
 To build a great conversationalist - we first need to understand what a conversation itself is and what it consists of.
 
-TODO
+A Conversation consists mostly out of two or more participants, which interact in a alternately matter. The Topic of the Conversation can change but mostly keeps in a certain context. Every Input in the Conversation is asumed to be related to this context or an Intent of switching to change the Context. For the matter of the Context the Bot Framework provides a State which you are able to attach Information to it. When ever a new Call to your Endpoint is made, it will identifiy the previous stored state (context) by its conversation ID.
 
 A Bot simply put is nothing more (or less) than a User Interface. In Windows History this mainly had been a Window on your screen with Buttons and 
 
@@ -10,15 +10,25 @@ A Bot simply put is nothing more (or less) than a User Interface. In Windows His
 
 ![Dialog Flow](https://jbbxbq.by3302.livefilestore.com/y4mtR08iUWnRj2xJZ3T7oEJroU3ZAeQkdI4DjwfVU2_PwKH680uPmx80IwbKUXe5bfAnOJsGal1jlhVtyYEim0jiopqFkMKsj-iLI8ToBQo-PxMUEqnhLXjzDdUfA4M_oF63_2uVzySNDBPa5IKlwmludz9yZUqzxeSprh1wGdj66SgRsRjHDMm_-HyK8PCy0wD6NCRqhZVHsW-FuffB8MsbQ?width=660&height=291&cropmode=none)
 
-## Form Flow
+In a classical Application its represented by an initial Dialog. By interacting with this form - for example a Storage Application - you open Detail Forms which are related to a certain topic. Back to our example, this could be a Entry Form to Insert a new "Storage Entity" inside our Storage. Another Detail Form could be creating a new Storage Facility - so each Detail Form covers their own Intent and address their Input. While a Storage Entity for example requires Size Information while a Storage Facility needs address Data to be created. 
+
+Our Bot relates to it, only by not providing Forms, instead it routes the Conversation to a different Dialog. A Dialogue can consist out of different Inputs and "guides" through the collection of required Information.
 
 ## Anatomy of a Dialog
 
+By using the Microsoft.Bot.Builder - Nuget Package we included the Bot Framework into our Application. A very important role of the Framework are Dialogs. To implement a very simple Dialog simply implement the Interface IDialog or IDialog<T> to create a Typed Dialogue. 
+
 ```csharp
-
-
+[Serializable]
+public class SampleDialog : IDialog
+{
+    public Task StartAsync(IDialogContext context)
+    {
+        // Do something
+    }
+}
 ```
-It´s important your Dialog is Serializable since the Dialog will be serialized into the state Datastore, so on User Input the bot is able to resume the Conversation
+It´s important your Dialog is Serializable since the Dialog will be serialized into the state Datastore, so the bot is able to restore the previous State on User Input and resume the Conversation
 
 ## Channels
 
