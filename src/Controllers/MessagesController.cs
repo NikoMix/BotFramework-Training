@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using BotTraining.Dialogs;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
@@ -21,33 +20,8 @@ namespace BotTraining.Controllers
         [ResponseType(typeof(void))]
         public virtual async Task<HttpResponseMessage> Post([FromBody] Activity activity)
         {
-            var client = new ConnectorClient(new Uri(activity.ServiceUrl), new MicrosoftAppCredentials());
             if (activity.Type == ActivityTypes.Message)
             {
-                // Before we trigger the costly call to LUIS - Indicate to User, that Bot is on it 
-                var typingActivity = activity.CreateReply();
-                typingActivity.Type = ActivityTypes.Typing;
-                await client.Conversations.ReplyToActivityAsync(typingActivity);
-
-                await Conversation.SendAsync(activity, () => IdeaDialog.BuildFormDialog());
-                
-            }
-            else if (activity.Type == ActivityTypes.ConversationUpdate)
-            {
-                IConversationUpdateActivity update = activity;
-                if (update.MembersAdded != null && update.MembersAdded.Any())
-                {
-                    foreach (var newMember in update.MembersAdded)
-                    {
-                        if (newMember.Id != activity.Recipient.Id)
-                        {
-                            var reply = activity.CreateReply();
-                            reply.Text =
-                                $@"Hey there {newMember.Name}. Nice to meet you.";
-                            await client.Conversations.ReplyToActivityAsync(reply);
-                        }
-                    }
-                }
             }
             else
             {
